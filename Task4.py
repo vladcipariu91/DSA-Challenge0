@@ -25,3 +25,30 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
+
+def get_possible_telemarketers():
+    only_outgoing = set()
+    other = set()
+
+    for record in calls:
+        calling_no = record[0]
+        only_outgoing.add(calling_no)
+
+        receiving_no = record[1]
+        other.add(receiving_no)
+
+    for record in texts:
+        sending_no = record[0]
+        other.add(sending_no)
+
+        receiving_no = record[1]
+        other.add(receiving_no)
+
+    telemarketers = sorted(only_outgoing - other)
+
+    print("These numbers could be telemarketers: ")
+    for telemarketer in telemarketers:
+        print(telemarketer)
+
+
+get_possible_telemarketers()

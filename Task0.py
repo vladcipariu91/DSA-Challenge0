@@ -50,28 +50,3 @@ def last_record_calls():
 
 first_record_texts()
 last_record_calls()
-
-"""
- Analysis (Big O):
-    Time complexity:
-        Reading the texts.csv -> O(n)
-        Creating the texts list -> O(n)  
-        Reading the calls.csv -> O(n)
-        Creating the calls list -> O(n)
-        Getting the first text record -> O(1)
-            Getting each of the fields from a text record O(1) (3 fields in total)
-        Getting the last call record -> O(1)
-            Getting each of the fields from a call record O(1) (4 fields in total)
-        
-        Running the whole code -> O(4n + 9) which can be approximated to O(n)
-        Printing the first text record and the last call record are done in constant time O(1)
-    
-    Space complexity:
-        The texts list uses O(n)
-        The calls list uses O(n)
-        
-        For printing the first text record there are 4 more variable allocations -> O(4)
-        For printing the last call record there are 5 more variable allocations -> O(5)
-        
-        For solving the problem the memory allocation is linear O(n)   
-"""

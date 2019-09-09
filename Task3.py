@@ -119,29 +119,3 @@ def get_telemarketer_prefix():
 
 get_prefixes_called_from_bangalore()
 get_percentage_of_calls_from_bangalore_to_bangalore()
-
-"""
- Analysis (Big O):
-    Time complexity:
-        Part A:
-            To find all the unique prefixes we must iterate over the list of call records which has a complexity of
-            O(call_records) approximately O(n).
-            The list needs to be sorted. I implemented this using the sorted function which according to this source:
-            https://stackoverflow.com/questions/14434490/what-is-the-complexity-of-this-python-sort-method has a time
-            complexity of O(n log(n)).
-            Then printing all the items from the list has a time complexity of O(unique_area_codes).
-            
-            The time complexity of the program is O(n log(n)).
-        Part B:
-            We need to iterate over the entire list of call records which has a complexity of O(call_records) 
-            approximately O(n).
-            
-            The time complexity of the program is O(n).
-
-    Space complexity:
-        Part A:
-            The space complexity of the program is O(unique_area_codes) approximately O(n).
-        Part B:
-            For this part we don't need to allocate any new data structures.
-            The space complexity of the program is O(1).
-"""

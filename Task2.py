@@ -55,19 +55,3 @@ def print_max_on_phone():
 
 
 max_time_on_phone()
-
-"""
- Analysis (Big O):
-    Time complexity:
-        First we need to iterate over the entire list of call records. This results in a time complexity of
-        O(call_records) which can be approximated to O(n).
-        Second we iterate over the dictionary containing all the unique phone numbers and their associated time 
-        spent on calls which results in O(n).
-        To run the whole program we have a time complexity of O(2n) which we'll approximate to O(n).        
-
-    Space complexity:
-        In order to determine the unique phone numbers and associate the time spent in calls to them we need a dictionary.
-        The space complexity for this is roughly O(n).
-        
-        The total space complexity for the program is also O(n).
-"""

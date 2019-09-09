@@ -1,0 +1,121 @@
+Analysis (Big O):
+
+    Time complexity:
+
+        Reading the texts.csv -> O(n)
+        Creating the texts list -> O(n)
+        Reading the calls.csv -> O(n)
+        Creating the calls list -> O(n)
+
+    Space complexity:
+
+        The texts list uses O(n)
+        The calls list uses O(n)
+
+    Task0:
+
+        Time complexity:
+
+            Getting the first text record -> O(1)
+            Getting each of the fields from a text record O(1) (3 fields in total)
+            Getting the last call record -> O(1)
+            Getting each of the fields from a call record O(1) (4 fields in total)
+
+            Running the whole code -> O(4n + 9) which can be approximated to O(n)
+            Printing the first text record and the last call record are done in constant time O(1)
+
+        Space complexity:
+
+            For printing the first text record there are 4 more variable allocations -> O(4)
+            For printing the last call record there are 5 more variable allocations -> O(5)
+
+            For solving the problem the memory allocation is linear O(n)
+
+    Task1:
+
+        Time complexity:
+
+            We need to iterate over both the texts and calls -> O(n + m) where n is the number of texts
+            and m is the number of calls. This is an overall O(n)
+
+        Space complexity:
+
+            We create a set that will store the unique numbers since a set doesn't contains duplicates.
+            The set will have a space complexity of O(n).
+            Doing texts + calls creates a new list of size n + m (n is the number of texts
+            and m is the number of calls) this results in a list with a space complexity of O(n).
+
+            The approximation of the space complexity is O(n).
+
+    Task2:
+
+        Time complexity:
+
+            First we need to iterate over the entire list of call records. This results in a time complexity of
+            O(call_records) which can be approximated to O(n).
+            Second we iterate over the dictionary containing all the unique phone numbers and their associated time
+            spent on calls which results in O(n).
+            To run the whole program we have a time complexity of O(2n) which we'll approximate to O(n).
+
+        Space complexity:
+
+            In order to determine the unique phone numbers and associate the time spent in calls to them we need a dictionary.
+            The space complexity for this is roughly O(n).
+
+            The total space complexity for the program is also O(n).
+
+    Task3:
+
+        Time complexity:
+
+            Part A:
+
+                To find all the unique prefixes we must iterate over the list of call records which has a complexity of
+                O(call_records) approximately O(n).
+                The list needs to be sorted. I implemented this using the sorted function which according to this source:
+                https://stackoverflow.com/questions/14434490/what-is-the-complexity-of-this-python-sort-method has a time
+                complexity of O(n log(n)).
+                Then printing all the items from the list has a time complexity of O(unique_area_codes).
+
+                The time complexity of the program is O(n log(n)).
+
+            Part B:
+
+                We need to iterate over the entire list of call records which has a complexity of O(call_records)
+                approximately O(n).
+
+                The time complexity of the program is O(n).
+
+        Space complexity:
+
+            Part A:
+                The space complexity of the program is O(unique_area_codes) approximately O(n).
+            Part B:
+                For this part we don't need to allocate any new data structures.
+                The space complexity of the program is O(1).
+
+    Task4:
+
+        Time complexity:
+            We need to iterate over the entire list of call records and the entire list of text records.
+            Iterating over the call records -> O(call_records) -> O(n).
+            Iterating over the text records -> O(text_records) -> O(n).
+
+            Doing the difference between the only_outgoing and others is -> O(only_outgoing + other) -> O(n)
+            according to https://wiki.python.org/moin/TimeComplexity.
+
+            Sorting the telemarketers list has a complexity of O(n log(n)).
+
+            Printing the sorted telemarketers has a complexity of O(n).
+
+            The complexity of running the program -> O(n log(n))
+
+        Space complexity:
+
+            We need to sets to solve this problem:
+                1. Only phone numbers that made outgoing calls which as a space complexity of O(outgoing_calls) -> O(n)
+                2. All other phone numbers which has a space complexity of O(other) -> O(n)
+            Create the sorted telemarketers list is another O(telemarketers)
+
+            The complexity of running the program -> O(n)
+
